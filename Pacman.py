@@ -31,6 +31,7 @@ ghosts = [
 
 # El arreglo 'tiles' define el tablero del juego.
 # '0' representa una pared (azul) y '1' representa un camino con comida (blanco).
+# Modificación: se ha cambiado el diseño del laberinto.
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -179,7 +180,8 @@ def move():
         if abs(pacman - point) < 20:
             return
 
-    turtle.ontimer(move, 100)
+    # Modificación: se ha reducido el tiempo para acelerar el juego.
+    turtle.ontimer(move, 50)
 
 
 def change(x, y):
