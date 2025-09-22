@@ -91,8 +91,8 @@ def world():
     "Draw world using path."
     # Cambio: el fondo ahora es un gris muy oscuro.
     bgcolor('#1a1a1a')
-    # Cambio: las paredes ahora son un gris medio.
-    path.color('#5c5c5c')
+    # Cambio: las paredes ahora son verdes.
+    path.color('green')
 
     for index in range(len(tiles)):
         tile = tiles[index]
@@ -105,8 +105,8 @@ def world():
             if tile == 1:
                 path.up()
                 path.goto(x + 10, y + 10)
-                # Cambio: la comida ahora es verde.
-                path.dot(2, 'lime')
+                # La comida sigue siendo blanca.
+                path.dot(2, 'white')
 
 
 def move():
@@ -149,8 +149,8 @@ def move():
 
         up()
         goto(point.x + 10, point.y + 10)
-        # Cambio: los fantasmas ahora son morados.
-        dot(20, 'purple')
+        # Los fantasmas siguen siendo rojos.
+        dot(20, 'red')
 
     update()
 
