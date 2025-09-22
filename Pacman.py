@@ -89,8 +89,10 @@ def valid(point):
 
 def world():
     "Draw world using path."
-    bgcolor('black')
-    path.color('blue')
+    # Cambio: el fondo ahora es un gris muy oscuro.
+    bgcolor('#1a1a1a')
+    # Cambio: las paredes ahora son un gris medio.
+    path.color('#5c5c5c')
 
     for index in range(len(tiles)):
         tile = tiles[index]
@@ -103,7 +105,8 @@ def world():
             if tile == 1:
                 path.up()
                 path.goto(x + 10, y + 10)
-                path.dot(2, 'white')
+                # Cambio: la comida ahora es verde.
+                path.dot(2, 'lime')
 
 
 def move():
@@ -127,7 +130,8 @@ def move():
 
     up()
     goto(pacman.x + 10, pacman.y + 10)
-    dot(20, 'yellow')
+    # Cambio: Pac-Man ahora es cian.
+    dot(20, 'cyan')
 
     for point, course in ghosts:
         if valid(point + course):
@@ -145,7 +149,8 @@ def move():
 
         up()
         goto(point.x + 10, point.y + 10)
-        dot(20, 'red')
+        # Cambio: los fantasmas ahora son morados.
+        dot(20, 'purple')
 
     update()
 
